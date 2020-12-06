@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="DobavljaciIzmjenaPageDef"
+                Package="hr.fipu.cloud.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DobavljaciVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="DobavljaciVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="DobavljaciVO1Iterator" id="Sifra">
+      <AttrNames>
+        <Item Value="Sifra"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DobavljaciVO1Iterator" id="Naziv">
+      <AttrNames>
+        <Item Value="Naziv"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DobavljaciVO1Iterator" id="Adresa">
+      <AttrNames>
+        <Item Value="Adresa"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="WebshopAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="WebshopAMDataControl"/>
+    <action IterBinding="DobavljaciVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="DobavljaciVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

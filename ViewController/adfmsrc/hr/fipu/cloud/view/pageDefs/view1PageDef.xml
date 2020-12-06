@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="view1PageDef"
+                Package="hr.fipu.cloud.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ArtikliVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="ArtikliVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ArtikliVO1Iterator" id="Sifra">
+      <AttrNames>
+        <Item Value="Sifra"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ArtikliVO1Iterator" id="Naziv">
+      <AttrNames>
+        <Item Value="Naziv"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="WebshopAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="WebshopAMDataControl"/>
+    <attributeValues IterBinding="ArtikliVO1Iterator" id="IdKategorija">
+      <AttrNames>
+        <Item Value="IdKategorija"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

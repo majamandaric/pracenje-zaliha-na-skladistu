@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="SifrarnikPageDef"
+                Package="fragments.kontrola">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ArtikliVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="ArtikliVO1Iterator"/>
+    <iterator Binds="DobavljaciVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="DobavljaciVO1Iterator"/>
+    <iterator Binds="IzdatniceZaglavljeVO1" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="IzdatniceZaglavljeVO1Iterator"/>
+    <iterator Binds="MjestaTroskaVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="MjestaTroskaVO1Iterator"/>
+    <iterator Binds="PrimkeZaglavljeVO1" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="PrimkeZaglavljeVO1Iterator"/>
+    <iterator Binds="SkladistaVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="SkladistaVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ArtikliVO1Iterator" id="ArtikliVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.ArtikliVO" Name="ArtikliVO10">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="DobavljaciVO1Iterator" id="DobavljaciVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.DobavljaciVO" Name="DobavljaciVO10">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="IzdatniceZaglavljeVO1Iterator" id="IzdatniceZaglavljeVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceZaglavljeVO" Name="IzdatniceZaglavljeVO10">
+        <AttrNames>
+          <Item Value="Broj"/>
+          <Item Value="Datum"/>
+          <Item Value="Opis"/>
+          <Item Value="OznakaPotvrde"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MjestaTroskaVO1Iterator" id="MjestaTroskaVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.MjestaTroskaVO" Name="MjestaTroskaVO10">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PrimkeZaglavljeVO1Iterator" id="PrimkeZaglavljeVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.PrimkeZaglavljeVO" Name="PrimkeZaglavljeVO10">
+        <AttrNames>
+          <Item Value="Broj"/>
+          <Item Value="Datum"/>
+          <Item Value="Opis"/>
+          <Item Value="OznakaPotvrde"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SkladistaVO1Iterator" id="SkladistaVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.SkladistaVO" Name="SkladistaVO10">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

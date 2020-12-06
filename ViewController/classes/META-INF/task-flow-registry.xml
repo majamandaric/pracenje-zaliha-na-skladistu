@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/btf/izmjena/artikli-izmjena-brf.xml" id="artikli-izmjena-brf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/btf/izmjena/dobavljaci-izmjena-btf.xml" id="dobavljaci-izmjena-btf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/btf/izmjena/mjestatroska-izmjena-btf.xml" id="mjestatroska-izmjena-btf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/btf/izmjena/skladista-izmjena-btf.xml" id="skladista-izmjena-btf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/btf/izmjena/zaliha-izmjena-btf.xml" id="zaliha-izmjena-btf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+   <task-flow-descriptor path="WEB-INF/btf/kontrola-btf.xml" id="webshop-btf" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
+</task-flow-registry>

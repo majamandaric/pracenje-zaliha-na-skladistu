@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="IzdatniceStavkeIzmjenaPageDef"
+                Package="fragments.kontrola">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="IzdatniceZaglavljeVO1" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="IzdatniceZaglavljeVO1Iterator"/>
+    <searchRegion Binds="IzdatniceZaglavljeVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="IzdatniceZaglavljeVO1Query"/>
+    <iterator Binds="IzdatniceStavkeVO3" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="IzdatniceStavkeVO3Iterator"/>
+    <searchRegion Binds="IzdatniceStavkeVO3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="IzdatniceStavkeVO3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="IzdatniceZaglavljeVO1Iterator" id="IzdatniceZaglavljeVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceZaglavljeVO" Name="IzdatniceZaglavljeVO10">
+        <AttrNames>
+          <Item Value="Broj"/>
+          <Item Value="Datum"/>
+          <Item Value="Opis"/>
+          <Item Value="OznakaPotvrde" Binds="OznakaPotvrde"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdMt"/>
+          <Item Value="IdSkladista"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="IzdatniceZaglavljeVO1Iterator" id="OznakaPotvrde" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="OznakaPotvrde"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="D"/>
+        <Item Value="N"/>
+      </ValueList>
+    </list>
+    <action IterBinding="IzdatniceZaglavljeVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="IzdatniceZaglavljeVO1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="IzdatniceZaglavljeVO1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <tree IterBinding="IzdatniceStavkeVO3Iterator" id="IzdatniceStavkeVO3">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceStavkeVO" Name="IzdatniceStavkeVO30">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="ProsjecnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdArtikla"/>
+          <Item Value="IdIzdatnice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="IzdatniceStavkeVO3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="IzdatniceStavkeVO3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="IzdatniceStavkeVO3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

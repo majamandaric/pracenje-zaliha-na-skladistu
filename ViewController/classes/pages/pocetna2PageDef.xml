@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="pocetna2PageDef" Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ArtikliVO3" RangeSize="25" DataControl="WebshopAMDataControl" id="ArtikliVO3Iterator"/>
+    <searchRegion Binds="ArtikliVO3Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ArtikliVO3Query"/>
+    <iterator Binds="ZaliheSkladistaVO3" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="ZaliheSkladistaVO3Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ArtikliVO3Iterator" id="ArtikliVO3">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.ArtikliVO" Name="ArtikliVO30">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ZaliheSkladistaVO3Iterator" id="ZaliheSkladistaVO3">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.ZaliheSkladistaVO" Name="ZaliheSkladistaVO30">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="ProsjecnaCijena"/>
+          <Item Value="Naziv"/>
+          <Item Value="Sifra"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

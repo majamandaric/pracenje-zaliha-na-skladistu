@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="IzdatnicePageDef"
+                Package="hr.fipu.cloud.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="IzdatniceZaglavljeVO1" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="IzdatniceZaglavljeVO1Iterator"/>
+    <searchRegion Binds="IzdatniceZaglavljeVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="IzdatniceZaglavljeVO1Query"/>
+    <iterator Binds="IzdatniceStavkeVO3" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="IzdatniceStavkeVO3Iterator"/>
+    <searchRegion Binds="IzdatniceStavkeVO3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="IzdatniceStavkeVO3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="IzdatniceZaglavljeVO1Iterator" id="IzdatniceZaglavljeVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceZaglavljeVO" Name="IzdatniceZaglavljeVO10">
+        <AttrNames>
+          <Item Value="Broj"/>
+          <Item Value="Datum"/>
+          <Item Value="Opis"/>
+          <Item Value="OznakaPotvrde"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdMt"/>
+          <Item Value="IdSkladista"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="IzdatniceStavkeVO3Iterator" id="IzdatniceStavkeVO3">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceStavkeVO" Name="IzdatniceStavkeVO30">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="ProsjecnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

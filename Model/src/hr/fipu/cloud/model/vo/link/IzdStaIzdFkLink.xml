@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="IzdStaIzdFkLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="hr.oikt.webshop.model.eo.assoc.IzdStaIzdFkAssoc">
+  <ViewLinkDefEnd
+    Name="IzdatniceZaglavljeVO"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.oikt.webshop.model.vo.IzdatniceZaglavljeVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="IzdatniceZaglavljeVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.oikt.webshop.model.vo.IzdatniceZaglavljeVO.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="IzdatniceStavkeVO"
+    Cardinality="-1"
+    Owner="hr.oikt.webshop.model.vo.IzdatniceStavkeVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="IzdatniceStavkeVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.oikt.webshop.model.vo.IzdatniceStavkeVO.IdIzdatnice"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

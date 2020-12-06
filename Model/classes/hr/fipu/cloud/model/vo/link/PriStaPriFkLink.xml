@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PriStaPriFkLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="hr.oikt.webshop.model.eo.assoc.PriStaPriFkAssoc">
+  <ViewLinkDefEnd
+    Name="PrimkeZaglavljeVO"
+    Cardinality="1"
+    Source="true"
+    Owner="hr.oikt.webshop.model.vo.PrimkeZaglavljeVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="PrimkeZaglavljeVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.oikt.webshop.model.vo.PrimkeZaglavljeVO.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PrimkeStavkeVO"
+    Cardinality="-1"
+    Owner="hr.oikt.webshop.model.vo.PrimkeStavkeVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="PrimkeStavkeVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.oikt.webshop.model.vo.PrimkeStavkeVO.IdPrimke"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

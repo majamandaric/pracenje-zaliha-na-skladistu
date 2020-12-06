@@ -1,0 +1,193 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+af|button { 
+width: 150px;
+height: 40px;
+line-height: 40px;
+text-align: center;
+vertical-align: bottom;
+color: white;
+border: skyblue 2.0px solid;
+font-size: 15px;
+font-weight: bold;
+font-family: Georgia;
+border-bottom-left-radius: 40px;
+border-bottom-right-radius: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 40px;
+background: linear-gradient(darkblue, blue, darkblue);
+}
+
+af|button:hover::link { 
+width: 130px;
+height: 37px;
+line-height: 40px;
+text-align: center;
+vertical-align: bottom;
+color: black;
+border: skyblue 2.0px solid;
+font-size: 15px;
+font-weight: bold;
+font-family: Georgia;
+border-bottom-left-radius: 40px;
+border-bottom-right-radius: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 40px;
+background: linear-gradient(darkblue, skyblue, white, skyblue, darkblue);
+}
+
+af|button:hover:disabled::link { 
+width: 130px;
+height: 37px;
+line-height: 40px;
+text-align: center;
+vertical-align: bottom;
+color: black;
+border: skyblue 2.0px solid;
+font-size: 15px;
+font-weight: bold;
+font-family: Georgia;
+border-bottom-left-radius: 40px;
+border-bottom-right-radius: 15px;
+border-top-left-radius: 15px;
+border-top-right-radius: 40px;
+background: linear-gradient(red, salmon, white, salmon, red);
+}
+
+af|table{
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+
+@keyframes prvibroj {
+    0%   {color: rgba(0, 0, 0, 0);}
+    100% {color: rgba(255, 0, 0, 1);}
+}
+@keyframes prvitekst {
+    0%   {color: rgba(0, 0, 0, 0);}
+    100% {color: rgba(0, 0, 0, 1);}
+}
+@keyframes drugibroj {
+    0%   {color: rgba(0, 0, 255, 0);}
+    100% {color: rgba(0, 0, 255, 1);}
+}
+@keyframes drugitekst {
+    0%   {color: rgba(0, 0, 0, 0);}
+    100% {color: rgba(0, 0, 0, 1);}
+}
+
+@keyframes gumb {
+    0%   {width: 0px; font-size: 0px; border-top-right-radius: 0px;}
+    50%   {font-size: 0px; border-top-right-radius: 40px;}
+    100% {width: 150px; font-size: 15px;}
+}
+
+@keyframes pozadina {
+
+    0%{background-size: 0% 0%;}
+    100%{background-size: 100% 100%;}
+}
+
+@keyframes tablica {
+
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.AFButtonBorderHover:alias {
+    border-width: 2px;
+}
+
+.AFButtonBorder:alias {
+    border-width: 0px; 
+}
+
+.AFButtonBorderActive:alias {
+    border-width: 0px; 
+}
+
+.AFButtonBorderDisabled:alias {
+    border-width: 0px; 
+}
+
+.AFButtonGradientStartHoverColor:alias {
+    color: #FF2121; 
+}
+
+.AFButtonGradientEndHoverColor:alias {
+    color: #ED0000; 
+}
+
+.AFButtonBorderBottomHoverColor:alias {
+    color: #9B3838; 
+}
+
+.AFButtonBorderHoverColor:alias {
+    color: #C03838; 
+}
+
+.AFButtonForeground:alias {
+    color: #FF5252; 
+}
+
+af|commandButton:text-only, af|goButton:text-only {
+    color: #FF5252; 
+}
+
+af|button::text {
+    color: #FF5252; 
+}
+
+af|commandToolbarButton::text {
+    color: #FF5252; 
+}
+
+.AFButtonGradientStartActiveColor:alias {
+    color: #E70000; 
+}
+
+.AFButtonBorderTopActiveColor:alias {
+    color: #E33232; 
+}
+
+.AFButtonBorderActiveColor:alias {
+    color: #D81414; 
+}
+
+.AFButtonGradientEndActiveColor:alias {
+    color: #940101; 
+}
+
+.AFButtonGradientStartColor:alias {
+    color: #E73900; 
+}
+
+.AFButtonBorderBottomColor:alias {
+    color: #E4805F; 
+}
+
+.AFButtonBorderColor:alias {
+    color: #E47C5A; 
+}
+
+/*INFO: Color value exceeded range after adjustment: HSL(14, 101%, 51%)*/
+.AFButtonGradientEndColor:alias {
+    color: #FF4407; 
+}
+
+.AFButtonGradientStartDisabledColor:alias {
+    color: #FF2121; 
+}
+
+.AFButtonBorderDisabledColor:alias {
+    color: #E30000; 
+}
+
+.AFButtonGradientEndDisabledColor:alias {
+    color: #FF0202; 
+}

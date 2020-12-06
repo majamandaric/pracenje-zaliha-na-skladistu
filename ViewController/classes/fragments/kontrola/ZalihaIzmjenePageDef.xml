@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="ZalihaIzmjenePageDef"
+                Package="fragments.kontrola">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ZalihaVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="ZalihaVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ZalihaVO1Iterator" id="Kolicina">
+      <AttrNames>
+        <Item Value="Kolicina"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ZalihaVO1Iterator" id="ProsjecnaCijena">
+      <AttrNames>
+        <Item Value="ProsjecnaCijena"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="WebshopAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="WebshopAMDataControl"/>
+    <action IterBinding="ZalihaVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="ZalihaVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <listOfValues IterBinding="ZalihaVO1Iterator" StaticList="false" Uses="LOV_IdArtikla" id="IdArtikla"/>
+    <listOfValues IterBinding="ZalihaVO1Iterator" StaticList="false" Uses="LOV_IdSkladista" id="IdSkladista"/>
+  </bindings>
+</pageDefinition>

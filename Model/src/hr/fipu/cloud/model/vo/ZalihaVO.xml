@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ZalihaVO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="ArtikliVO1"
+    ViewObjectName="hr.oikt.webshop.model.vo.ArtikliVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SkladistaVO1"
+    ViewObjectName="hr.oikt.webshop.model.vo.SkladistaVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_IdArtikla"
+    ListVOName="ArtikliVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IdArtikla"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Naziv"/>
+      <Item Value="Sifra"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IdSkladista"
+    ListVOName="SkladistaVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IdSkladista"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Naziv"/>
+      <Item Value="Sifra"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="ZalihaEO"
+    Entity="hr.oikt.webshop.model.eo.ZalihaEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="ZalihaEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="IdSkladista"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdSkladista"
+    EntityUsage="ZalihaEO"
+    AliasName="ID_SKLADISTA"
+    LOVName="LOV_IdSkladista">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IdArtikla"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdArtikla"
+    EntityUsage="ZalihaEO"
+    AliasName="ID_ARTIKLA"
+    LOVName="LOV_IdArtikla">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Kolicina"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Kolicina"
+    EntityUsage="ZalihaEO"
+    AliasName="KOLICINA"/>
+  <ViewAttribute
+    Name="ProsjecnaCijena"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProsjecnaCijena"
+    EntityUsage="ZalihaEO"
+    AliasName="PROSJECNA_CIJENA"/>
+  <ViewAttribute
+    Name="UserDodavanja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserDodavanja"
+    EntityUsage="ZalihaEO"
+    AliasName="USER_DODAVANJA"/>
+  <ViewAttribute
+    Name="DatumDodavanja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatumDodavanja"
+    EntityUsage="ZalihaEO"
+    AliasName="DATUM_DODAVANJA"/>
+  <ViewAttribute
+    Name="UserIzmjene"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserIzmjene"
+    EntityUsage="ZalihaEO"
+    AliasName="USER_IZMJENE"/>
+  <ViewAttribute
+    Name="DatumIzmjene"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatumIzmjene"
+    EntityUsage="ZalihaEO"
+    AliasName="DATUM_IZMJENE"/>
+  <ViewAttribute
+    Name="NazivSkladista"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    IsQueriable="false"
+    DefaultValue="1"/>
+</ViewObject>

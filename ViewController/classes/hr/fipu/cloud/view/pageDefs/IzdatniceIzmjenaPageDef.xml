@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="IzdatniceIzmjenaPageDef"
+                Package="hr.fipu.cloud.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="IzdatniceStavkeVO1" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="IzdatniceStavkeVO1Iterator"/>
+    <searchRegion Binds="IzdatniceStavkeVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="IzdatniceStavkeVO1Query"/>
+    <iterator Binds="IzdatniceZaglavljeVO1" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="IzdatniceZaglavljeVO1Iterator"/>
+    <searchRegion Binds="IzdatniceZaglavljeVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="IzdatniceZaglavljeVO1Query"/>
+    <iterator Binds="IzdatniceStavkeVO3" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="IzdatniceStavkeVO3Iterator"/>
+    <searchRegion Binds="IzdatniceStavkeVO3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="IzdatniceStavkeVO3Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="IzdatniceStavkeVO1Iterator" id="IzdatniceStavkeVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceStavkeVO" Name="IzdatniceStavkeVO10">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="ProsjecnaCijena"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="IzdatniceZaglavljeVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceZaglavljeVO1Iterator" id="UserDodavanja">
+      <AttrNames>
+        <Item Value="UserDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceZaglavljeVO1Iterator" id="DatumDodavanja">
+      <AttrNames>
+        <Item Value="DatumDodavanja"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceZaglavljeVO1Iterator" id="UserIzmjene">
+      <AttrNames>
+        <Item Value="UserIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="IzdatniceZaglavljeVO1Iterator" id="DatumIzmjene">
+      <AttrNames>
+        <Item Value="DatumIzmjene"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="IzdatniceZaglavljeVO1Iterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <listOfValues IterBinding="IzdatniceZaglavljeVO1Iterator" StaticList="false" Uses="LOV_IdMt" id="IdMt1"/>
+    <listOfValues IterBinding="IzdatniceZaglavljeVO1Iterator" StaticList="false" Uses="LOV_IdSkladista"
+                  id="IdSkladista1"/>
+    <list IterBinding="IzdatniceZaglavljeVO1Iterator" id="OznakaPotvrde1" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="OznakaPotvrde"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="D"/>
+        <Item Value="N"/>
+      </ValueList>
+    </list>
+    <tree IterBinding="IzdatniceZaglavljeVO1Iterator" id="IzdatniceZaglavljeVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceZaglavljeVO" Name="IzdatniceZaglavljeVO10">
+        <AttrNames>
+          <Item Value="Broj"/>
+          <Item Value="Datum"/>
+          <Item Value="Opis"/>
+          <Item Value="OznakaPotvrde"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdMt"/>
+          <Item Value="IdSkladista"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="IzdatniceStavkeVO3Iterator" id="IzdatniceStavkeVO3">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceStavkeVO" Name="IzdatniceStavkeVO30">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="ProsjecnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdArtikla"/>
+          <Item Value="IdIzdatnice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="IzdatniceZaglavljeVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="IzdatniceZaglavljeVO1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="IzdatniceZaglavljeVO1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="IzdatniceStavkeVO3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="IzdatniceStavkeVO3Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="IzdatniceStavkeVO3Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="WebshopAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="WebshopAMDataControl"/>
+    <tree IterBinding="IzdatniceZaglavljeVO1Iterator" id="IzdatniceZaglavljeVO11">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceZaglavljeVO" Name="IzdatniceZaglavljeVO110">
+        <AttrNames>
+          <Item Value="Broj"/>
+          <Item Value="Datum"/>
+          <Item Value="Opis"/>
+          <Item Value="OznakaPotvrde"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdMt"/>
+          <Item Value="IdSkladista"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="IzdatniceStavkeVO3Iterator" id="IzdatniceStavkeVO31">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.IzdatniceStavkeVO" Name="IzdatniceStavkeVO310">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="ProsjecnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdArtikla"/>
+          <Item Value="IdIzdatnice"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

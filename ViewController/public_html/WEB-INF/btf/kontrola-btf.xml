@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="webshop-btf">
+    <default-activity>Kontrola</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__12">
+      <managed-bean-name>createArtikliPageHelper</managed-bean-name>
+      <managed-bean-class>hr.oikt.webshop.view.beans.createArtikliPageHelper</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>InsertBean</managed-bean-name>
+      <managed-bean-class>hr.oikt.webshop.view.beans.InsBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__9">
+      <managed-bean-name>ArtikliBean</managed-bean-name>
+      <managed-bean-class>hr.oikt.webshop.view.beans.ArtikliBean</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__10">
+      <managed-bean-name>ArtikliTabBean</managed-bean-name>
+      <managed-bean-class>hr.fipu.cloud.view.beans.ArtikliTabBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <task-flow-call id="callArt">
+      <task-flow-reference>
+        <document>/WEB-INF/btf/izmjena/artikli-izmjena-brf.xml</document>
+        <id>artikli-izmjena-brf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="Artikli">
+      <page>/fragments/dijelovi/Artikli.jsff</page>
+    </view>
+    <view id="Kontrola">
+      <page>/fragments/pocetna.jsff</page>
+    </view>
+    <view id="Dobavljaci">
+      <page>/fragments/dijelovi/Dobavljaci.jsff</page>
+    </view>
+    <view id="Izdatnice">
+      <page>/fragments/dijelovi/Izdatnice.jsff</page>
+    </view>
+    <view id="MjestaTroska">
+      <page>/fragments/dijelovi/MjestaTroska.jsff</page>
+    </view>
+    <view id="Primke">
+      <page>/fragments/dijelovi/Primke.jsff</page>
+    </view>
+    <view id="Skladista">
+      <page>/fragments/dijelovi/Skladista.jsff</page>
+    </view>
+    <view id="Zaliha">
+      <page>/fragments/dijelovi/Zaliha.jsff</page>
+    </view>
+    <task-flow-call id="callDob">
+      <task-flow-reference>
+        <document>/WEB-INF/btf/izmjena/dobavljaci-izmjena-btf.xml</document>
+        <id>dobavljaci-izmjena-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="callMT">
+      <task-flow-reference>
+        <document>/WEB-INF/btf/izmjena/mjestatroska-izmjena-btf.xml</document>
+        <id>mjestatroska-izmjena-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="callPri">
+      <task-flow-reference>
+        <document>/WEB-INF/btf/izmjena/primke-izmjena-btf.xml</document>
+        <id>primke-izmjena-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="callSkl">
+      <task-flow-reference>
+        <document>/WEB-INF/btf/izmjena/skladista-izmjena-btf.xml</document>
+        <id>skladista-izmjena-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="callZal">
+      <task-flow-reference>
+        <document>/WEB-INF/btf/izmjena/zaliha-izmjena-btf.xml</document>
+        <id>zaliha-izmjena-btf</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <view id="Sifrarnik">
+      <page>/fragments/dijelovi/Sifrarnik.jsff</page>
+    </view>
+    <task-flow-call id="callIzd">
+      <task-flow-reference>
+        <document>/WEB-INF/btf/izmjena/izdatnice-izmjena-btf.xml</document>
+        <id>izdatnice-izmjena</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__11">
+      <from-activity-id>Artikli</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>callArt</from-outcome>
+        <to-activity-id>callArt</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__6">
+        <from-outcome>goToKontrola</from-outcome>
+        <to-activity-id>Kontrola</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>Kontrola</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome>goToArtikli</from-outcome>
+        <to-activity-id>Artikli</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__15">
+        <from-outcome>goToDobavljaci</from-outcome>
+        <to-activity-id>Dobavljaci</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__18">
+        <from-outcome>goToIzdatnice</from-outcome>
+        <to-activity-id>Izdatnice</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__21">
+        <from-outcome>goToMT</from-outcome>
+        <to-activity-id>MjestaTroska</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__24">
+        <from-outcome>goToPrimke</from-outcome>
+        <to-activity-id>Primke</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__27">
+        <from-outcome>goToSkladista</from-outcome>
+        <to-activity-id>Skladista</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__30">
+        <from-outcome>goToZaliha</from-outcome>
+        <to-activity-id>Zaliha</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__39">
+        <from-outcome>goToSifrarnik</from-outcome>
+        <to-activity-id>Sifrarnik</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__16">
+      <from-activity-id>Dobavljaci</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome>goToKontrola</from-outcome>
+        <to-activity-id>Kontrola</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__33">
+        <from-outcome>callDob</from-outcome>
+        <to-activity-id>callDob</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__19">
+      <from-activity-id>Izdatnice</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome>goToKontrola</from-outcome>
+        <to-activity-id>Kontrola</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__8">
+        <from-outcome>callIzd</from-outcome>
+        <to-activity-id>callIzd</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id>MjestaTroska</from-activity-id>
+      <control-flow-case id="__23">
+        <from-outcome>goToKontrola</from-outcome>
+        <to-activity-id>Kontrola</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__35">
+        <from-outcome>callMT</from-outcome>
+        <to-activity-id>callMT</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__25">
+      <from-activity-id>Primke</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome>goToKontrola</from-outcome>
+        <to-activity-id>Kontrola</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__36">
+        <from-outcome>callPri</from-outcome>
+        <to-activity-id>callPri</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__28">
+      <from-activity-id>Skladista</from-activity-id>
+      <control-flow-case id="__29">
+        <from-outcome>goToKontrola</from-outcome>
+        <to-activity-id>Kontrola</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__37">
+        <from-outcome>callSkl</from-outcome>
+        <to-activity-id>callSkl</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__31">
+      <from-activity-id>Zaliha</from-activity-id>
+      <control-flow-case id="__32">
+        <from-outcome>goToKontrola</from-outcome>
+        <to-activity-id>Kontrola</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__38">
+        <from-outcome>callZal</from-outcome>
+        <to-activity-id>callZal</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__40">
+      <from-activity-id>Sifrarnik</from-activity-id>
+      <control-flow-case id="__41">
+        <from-outcome>goToKontrola</from-outcome>
+        <to-activity-id>Kontrola</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ArtKatLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  EntityAssociation="hr.oikt.webshop.model.eo.assoc.ArtKatFkAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="hr.fipu.cloud.model.vo.link.ArtKatLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="ArtikliVO"
+    Cardinality="-1"
+    Source="true"
+    Owner="hr.oikt.webshop.model.vo.ArtikliVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ArtikliVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.oikt.webshop.model.vo.ArtikliVO.IdKategorija"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="KategorijeVO"
+    Cardinality="1"
+    Owner="hr.oikt.webshop.model.vo.KategorijeVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="KategorijeVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="hr.oikt.webshop.model.vo.KategorijeVO.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="hr.fipu.cloud.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

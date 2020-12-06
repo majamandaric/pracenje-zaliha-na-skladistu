@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="SkladistaPageDef"
+                Package="fragments.kontrola">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SkladistaVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="SkladistaVO1Iterator"/>
+    <searchRegion Binds="SkladistaVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="SkladistaVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SkladistaVO1Iterator" id="SkladistaVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.SkladistaVO" Name="SkladistaVO10">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

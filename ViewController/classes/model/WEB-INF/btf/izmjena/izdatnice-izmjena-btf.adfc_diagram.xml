@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">izdatniceIzmjena</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">389.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>izdatniceIzmjena&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">274.89648</property>
+      <property
+         name="page">/fragments/kontrola/izdatniceIzmjena.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">natrag</property>
+      <property
+         name="x">650.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>natrag&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  natrag&lt;/p></property>
+      <property
+         name="y">276.1953</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">natrag</property>
+      <property
+         name="sdm:polyPoints">R50,430.0,274.5459,609.0,275.84473,L50</property>
+   </ControlFlowCase>
+</SDM>

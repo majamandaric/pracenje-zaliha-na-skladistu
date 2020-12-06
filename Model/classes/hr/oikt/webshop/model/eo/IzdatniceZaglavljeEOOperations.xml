@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='windows-1250'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="IzdatniceZaglavljeEOOperations">
+  <ExpressionCodeSource
+    Name="IzdatniceZaglavljeEORow"
+    Type="Static"
+    URI="hr/oikt/webshop/model/eo/IzdatniceZaglavljeEO.bcs"/>
+</OperationDefinitions>

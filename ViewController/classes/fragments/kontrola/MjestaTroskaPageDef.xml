@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="MjestaTroskaPageDef"
+                Package="fragments.kontrola">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MjestaTroskaVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="MjestaTroskaVO1Iterator"/>
+    <searchRegion Binds="MjestaTroskaVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MjestaTroskaVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MjestaTroskaVO1Iterator" id="MjestaTroskaVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.MjestaTroskaVO" Name="MjestaTroskaVO10">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

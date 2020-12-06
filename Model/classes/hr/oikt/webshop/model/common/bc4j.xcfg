@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="hr.oikt.webshop.model.WebshopAM">
+      <AppModuleConfig name="WebshopAMLocal" jbo.project="hr.oikt.webshop.model.Model" ApplicationName="hr.oikt.webshop.model.WebshopAM" DeployPlatform="LOCAL">
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="hr.oikt.webshop.model.WebshopAM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/sklconnDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="WebshopAMShared" jbo.project="hr.oikt.webshop.model.Model" ApplicationName="hr.oikt.webshop.model.WebshopAM" DeployPlatform="LOCAL">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="hr.oikt.webshop.model.WebshopAM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/sklconnDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

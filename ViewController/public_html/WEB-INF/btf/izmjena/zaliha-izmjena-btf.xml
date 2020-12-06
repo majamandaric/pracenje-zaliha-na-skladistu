@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="zaliha-izmjena-btf">
+    <default-activity>ZalihaIzmjene</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="ZalihaIzmjene">
+      <page>/fragments/dijelovi/ZalihaIzmjene.jsff</page>
+    </view>
+    <task-flow-return id="natrag">
+      <outcome>
+        <name>natrag</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>ZalihaIzmjene</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>natrag</from-outcome>
+        <to-activity-id>natrag</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

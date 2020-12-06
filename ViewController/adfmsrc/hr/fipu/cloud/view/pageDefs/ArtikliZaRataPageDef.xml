@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="ArtikliZaRataPageDef"
+                Package="hr.fipu.cloud.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ArtikliGrafNulaVO1" RangeSize="-1" DataControl="WebshopAMDataControl" id="ArtikliGrafVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ArtikliGrafVO1Iterator" id="ArtikliGrafVO1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.ArtikliGrafNulaVO" Name="ArtikliGrafVO1">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="Naziv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

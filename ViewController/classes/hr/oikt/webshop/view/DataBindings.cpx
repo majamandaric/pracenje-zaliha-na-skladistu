@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="hr.oikt.webshop.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/fragments/webshop/pocetna.jsff" usageId="hr_oikt_webshop_view_pocetnaPageDef"/>
+    <page path="/pages/test.jsf" usageId="hr_oikt_webshop_view_testPageDef"/>
+    <page path="/pages/untitled1.jsf" usageId="hr_oikt_webshop_view_untitled1PageDef"/>
+    <page path="/fragments/webshop/pocetna2.jsff" usageId="hr_oikt_webshop_view_pocetna2PageDef"/>
+    <page path="/pages/stranica.jsf" usageId="hr_oikt_webshop_view_untitled2PageDef"/>
+    <page path="/fragments/kontrola/kontrola.jsff" usageId="hr_oikt_webshop_view_kontrolaPageDef"/>
+    <page path="/fragments/kontrola/ArtikliPromjena.jsff" usageId="hr_oikt_webshop_view_ArtikliPageDef"/>
+    <page path="/WEB-INF/btf/insert-artikli-btf.xml#insert-artikli-btf@CreateInsert"
+          usageId="hr_oikt_webshop_view_insert_artikli_btf_insert_artikli_btf_CreateInsertPageDef"/>
+    <page path="/view1.jsff" usageId="hr_oikt_webshop_view_view1PageDef"/>
+    <page path="/fragments/kontrola/Artikli.jsff" usageId="hr_oikt_webshop_view_ArtikliPageDef1"/>
+    <page path="/fragments/kontrola/DobavljaciIzmjena.jsff" usageId="hr_oikt_webshop_view_DobavljaciIzmjenaPageDef"/>
+    <page path="/fragments/kontrola/Dobavljaci.jsff" usageId="hr_oikt_webshop_view_DobavljaciPageDef"/>
+    <page path="/fragments/kontrola/IzdatniceIzmjena.jsff" usageId="hr_oikt_webshop_view_IzdatniceIzmjenaPageDef"/>
+    <page path="/fragments/kontrola/Izdatnice.jsff" usageId="hr_oikt_webshop_view_IzdatnicePageDef"/>
+    <page path="/fragments/kontrola/MTIzmjena.jsff" usageId="hr_oikt_webshop_view_MTIzmjenaPageDef"/>
+    <page path="/fragments/kontrola/MjestaTroska.jsff" usageId="hr_oikt_webshop_view_MjestaTroskaPageDef"/>
+    <page path="/fragments/kontrola/Primke.jsff" usageId="hr_oikt_webshop_view_PrimkePageDef"/>
+    <page path="/fragments/kontrola/Skladista.jsff" usageId="hr_oikt_webshop_view_SkladistaPageDef"/>
+    <page path="/fragments/kontrola/Zaliha.jsff" usageId="hr_oikt_webshop_view_ZalihaPageDef"/>
+    <page path="/fragments/kontrola/SkladistaIzmjene.jsff" usageId="hr_oikt_webshop_view_SkladistaIzmjenePageDef"/>
+    <page path="/fragments/kontrola/ZalihaIzmjene.jsff" usageId="hr_oikt_webshop_view_ZalihaIzmjenePageDef"/>
+    <page path="/fragments/kontrola/ArtikliIzmjena.jsff" usageId="hr_oikt_webshop_view_ArtikliIzmjenaPageDef"/>
+    <page path="/fragments/Kontrola.jsff" usageId="hr_oikt_webshop_view_KontrolaTestPageDef"/>
+    <page path="/ArtikliZaRata.jsff" usageId="hr_oikt_webshop_view_ArtikliZaRataPageDef"/>
+    <page path="/artikliIzmjenaNovo.jsff" usageId="hr_oikt_webshop_view_artikliIzmjenaNovoPageDef"/>
+    <page path="/fragments/kontrola/IzdatniceIzmjena.jsff"
+          usageId="hr_oikt_webshop_view_IzdatniceStavkeIzmjenaPageDef"/>
+    <page path="/fragments/kontrola/Sifrarnik.jsff" usageId="hr_oikt_webshop_view_SifrarnikPageDef"/>
+    <page path="/fragments/kontrola/PrimkeIzmjena.jsff" usageId="hr_oikt_webshop_view_PrimkeIzmjenaPageDef"/>
+    <page path="/fragments/kontrola/izdatniceIzmjena.jsff" usageId="hr_oikt_webshop_view_IzdatniceIzmjenaPageDef"/>
+    <page path="/WEB-INF/btf/izmjena/izdatnice-izmjena-btf.xml#izdatnice-izmjena@Rollback"
+          usageId="hr_oikt_webshop_view_izdatnice_izmjena_btf_izdatnice_izmjena_RollbackPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="hr_oikt_webshop_view_pocetnaPageDef" path="fragments.pocetnaPageDef"/>
+    <page id="hr_oikt_webshop_view_testPageDef" path="pages.testPageDef"/>
+    <page id="hr_oikt_webshop_view_untitled1PageDef" path="pages.untitled1PageDef"/>
+    <page id="hr_oikt_webshop_view_pocetna2PageDef" path="pages.pocetna2PageDef"/>
+    <page id="hr_oikt_webshop_view_untitled2PageDef" path="pages.untitled2PageDef"/>
+    <page id="hr_oikt_webshop_view_kontrolaPageDef" path="fragments.kontrola.kontrolaPageDef"/>
+    <page id="hr_oikt_webshop_view_ArtikliPageDef" path="hr.oikt.webshop.view.pageDefs.ArtikliPageDef"/>
+    <page id="hr_oikt_webshop_view_insert_artikli_btf_insert_artikli_btf_CreateInsertPageDef"
+          path="btf.insert_artikli_btf_insert_artikli_btf_CreateInsertPageDef"/>
+    <page id="hr_oikt_webshop_view_view1PageDef" path="hr.oikt.webshop.view.pageDefs.view1PageDef"/>
+    <page id="hr_oikt_webshop_view_ArtikliPageDef1" path="fragments.kontrola.ArtikliPageDef"/>
+    <page id="hr_oikt_webshop_view_DobavljaciIzmjenaPageDef"
+          path="hr.oikt.webshop.view.pageDefs.DobavljaciIzmjenaPageDef"/>
+    <page id="hr_oikt_webshop_view_DobavljaciPageDef" path="fragments.kontrola.DobavljaciPageDef"/>
+    <page id="hr_oikt_webshop_view_IzdatniceIzmjenaPageDef"
+          path="hr.oikt.webshop.view.pageDefs.IzdatniceIzmjenaPageDef"/>
+    <page id="hr_oikt_webshop_view_IzdatnicePageDef" path="hr.oikt.webshop.view.pageDefs.IzdatnicePageDef"/>
+    <page id="hr_oikt_webshop_view_MTIzmjenaPageDef" path="fragments.kontrola.MTIzmjenaPageDef"/>
+    <page id="hr_oikt_webshop_view_MjestaTroskaPageDef" path="fragments.kontrola.MjestaTroskaPageDef"/>
+    <page id="hr_oikt_webshop_view_PrimkePageDef" path="hr.oikt.webshop.view.pageDefs.PrimkePageDef"/>
+    <page id="hr_oikt_webshop_view_SkladistaPageDef" path="fragments.kontrola.SkladistaPageDef"/>
+    <page id="hr_oikt_webshop_view_ZalihaPageDef" path="hr.oikt.webshop.view.pageDefs.ZalihaPageDef"/>
+    <page id="hr_oikt_webshop_view_SkladistaIzmjenePageDef" path="fragments.kontrola.SkladistaIzmjenePageDef"/>
+    <page id="hr_oikt_webshop_view_ZalihaIzmjenePageDef" path="fragments.kontrola.ZalihaIzmjenePageDef"/>
+    <page id="hr_oikt_webshop_view_ArtikliIzmjenaPageDef" path="fragments.kontrola.ArtikliIzmjenaPageDef"/>
+    <page id="hr_oikt_webshop_view_KontrolaTestPageDef" path="fragments.kontrola.KontrolaTestPageDef"/>
+    <page id="hr_oikt_webshop_view_ArtikliZaRataPageDef" path="hr.oikt.webshop.view.pageDefs.ArtikliZaRataPageDef"/>
+    <page id="hr_oikt_webshop_view_artikliIzmjenaNovoPageDef"
+          path="hr.oikt.webshop.view.pageDefs.artikliIzmjenaNovoPageDef"/>
+    <page id="hr_oikt_webshop_view_IzdatniceStavkeIzmjenaPageDef"
+          path="fragments.kontrola.IzdatniceStavkeIzmjenaPageDef"/>
+    <page id="hr_oikt_webshop_view_SifrarnikPageDef" path="fragments.kontrola.SifrarnikPageDef"/>
+    <page id="hr_oikt_webshop_view_PrimkeIzmjenaPageDef" path="hr.oikt.webshop.view.pageDefs.PrimkeIzmjenaPageDef"/>
+    <page id="hr_oikt_webshop_view_izdatnice_izmjena_btf_izdatnice_izmjena_RollbackPageDef"
+          path="btf.izmjena.izdatnice_izmjena_btf_izdatnice_izmjena_RollbackPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="WebshopAMDataControl" Package="hr.oikt.webshop.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="WebshopAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

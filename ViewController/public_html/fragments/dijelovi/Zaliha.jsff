@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelGridLayout id="pgl1" inlineStyle="background: linear-gradient(to top, rgba(0,191,255,0), rgba(0,191,255,0.5)); background-size: 100% 100%; animation: pozadina 3s ease 1; background-repeat: repeat-x;">
+        <af:gridRow height="50px" id="gr1">
+            <af:gridCell halign="stretch" valign="stretch" columnSpan="3" id="gc2">
+                <!-- Header -->
+                <af:button text="Natrag" id="b1" action="goToKontrola" inlineStyle="margin-bottom:5px; animation-name: gumb; animation-duration: 1s; animation-iteration-count: 1;"/>
+                <af:button text="Izmjena" id="b2" action="callZal" inlineStyle="margin-bottom:5px; animation-name: gumb; animation-duration: 1s; animation-iteration-count: 1;"/>
+            </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="100%" id="gr2">
+            <af:gridCell width="100px" halign="stretch" valign="stretch" id="gc1">
+                <!-- Left -->
+            </af:gridCell>
+            <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc4">
+                <!-- Content -->
+                <af:panelStretchLayout id="psl1" topHeight="15px">
+                    <f:facet name="top">
+                        <af:outputText value="Zaliha" id="ot7" inlineStyle="animation-name: tablica; animation-duration: 2s; animation-iteration-count: 1;"/>
+                    </f:facet>
+                    <f:facet name="center">
+                        <af:table value="#{bindings.ZalihaVO1.collectionModel}" var="row"
+                                  rows="#{bindings.ZalihaVO1.rangeSize}"
+                                  emptyText="#{bindings.ZalihaVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.ZalihaVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.ZalihaVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.ZalihaVO1.rangeSize}"
+                                  filterModel="#{bindings.ZalihaVO1Query.queryDescriptor}" filterVisible="true"
+                                  queryListener="#{bindings.ZalihaVO1Query.processQuery}" varStatus="vs" id="t1"
+                                  inlineStyle="animation-name: tablica; animation-duration: 2s; animation-iteration-count: 1;"
+                                  width="390">
+                            <af:column sortProperty="#{bindings.ZalihaVO1.hints.Kolicina.name}" filterable="true"
+                                       sortable="true" headerText="Količina" id="c1" width="50">
+                                <af:outputText value="#{row.Kolicina}"
+                                               shortDesc="#{bindings.ZalihaVO1.hints.Kolicina.tooltip}" id="ot1">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ZalihaVO1.hints.Kolicina.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ZalihaVO1.hints.ProsjecnaCijena.name}" filterable="true"
+                                       sortable="true" headerText="Prosječna cijena" id="c2" width="50">
+                                <af:outputText value="#{row.ProsjecnaCijena}"
+                                               shortDesc="#{bindings.ZalihaVO1.hints.ProsjecnaCijena.tooltip}" id="ot2">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.ZalihaVO1.hints.ProsjecnaCijena.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ZalihaVO1.hints.UserDodavanja.name}" filterable="true"
+                                       sortable="true" headerText="Dodao korisnik" id="c3" width="50">
+                                <af:outputText value="#{row.UserDodavanja}"
+                                               shortDesc="#{bindings.ZalihaVO1.hints.UserDodavanja.tooltip}" id="ot3"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ZalihaVO1.hints.DatumDodavanja.name}" filterable="true"
+                                       sortable="true" headerText="Datum dodavanja" id="c4" width="70">
+                                <f:facet name="filter">
+                                    <af:inputDate value="#{bindings.ZalihaVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumDodavanja.value}"
+                                                  id="id1">
+                                        <af:convertDateTime pattern="#{bindings.ZalihaVO1.hints.DatumDodavanja.format}"/>
+                                    </af:inputDate>
+                                </f:facet>
+                                <af:outputText value="#{row.DatumDodavanja}"
+                                               shortDesc="#{bindings.ZalihaVO1.hints.DatumDodavanja.tooltip}" id="ot4">
+                                    <af:convertDateTime pattern="#{bindings.ZalihaVO1.hints.DatumDodavanja.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ZalihaVO1.hints.UserIzmjene.name}" filterable="true"
+                                       sortable="true" headerText="Izmjenio korisnik" id="c5" width="50">
+                                <af:outputText value="#{row.UserIzmjene}"
+                                               shortDesc="#{bindings.ZalihaVO1.hints.UserIzmjene.tooltip}" id="ot5"/>
+                            </af:column>
+                            <af:column sortProperty="#{bindings.ZalihaVO1.hints.DatumIzmjene.name}" filterable="true"
+                                       sortable="true" headerText="Datum izmjene" id="c6" width="70">
+                                <f:facet name="filter">
+                                    <af:inputDate value="#{bindings.ZalihaVO1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatumIzmjene.value}"
+                                                  id="id2">
+                                        <af:convertDateTime pattern="#{bindings.ZalihaVO1.hints.DatumIzmjene.format}"/>
+                                    </af:inputDate>
+                                </f:facet>
+                                <af:outputText value="#{row.DatumIzmjene}"
+                                               shortDesc="#{bindings.ZalihaVO1.hints.DatumIzmjene.tooltip}" id="ot6">
+                                    <af:convertDateTime pattern="#{bindings.ZalihaVO1.hints.DatumIzmjene.format}"/>
+                                </af:outputText>
+                            </af:column>
+                        </af:table>
+                    </f:facet>
+                </af:panelStretchLayout>
+            </af:gridCell>
+            <af:gridCell width="100px" halign="stretch" valign="stretch" id="gc3">
+                <!-- Right -->
+            </af:gridCell>
+        </af:gridRow>
+    </af:panelGridLayout>
+</ui:composition>

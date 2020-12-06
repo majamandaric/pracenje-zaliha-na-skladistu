@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">MTIzmjena</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">311.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>MTIzmjena&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">320.0918</property>
+      <property
+         name="page">/fragments/kontrola/MTIzmjena.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">natrag</property>
+      <property
+         name="x">549.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>natrag&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  natrag&lt;/p></property>
+      <property
+         name="y">321.14355</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">natrag</property>
+      <property
+         name="sdm:polyPoints">R50,352.0,319.7412,508.0,320.79297,L50</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="ArtikliPageDef"
+                Package="fragments.kontrola">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ArtikliVO1" RangeSize="25" DataControl="WebshopAMDataControl" id="ArtikliVO1Iterator"/>
+    <searchRegion Binds="ArtikliVO1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ArtikliVO1Query"/>
+    <iterator Binds="ArtikliGrafSve1" RangeSize="-1" DataControl="WebshopAMDataControl" id="ArtikliGrafSve1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ArtikliVO1Iterator" id="ArtikliVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.ArtikliVO" Name="ArtikliVO10">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ArtikliVO1Iterator" id="ArtikliVO11">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.ArtikliVO" Name="ArtikliVO110">
+        <AttrNames>
+          <Item Value="Sifra"/>
+          <Item Value="Naziv"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ArtikliGrafSve1Iterator" id="ArtikliGrafSve1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.ArtikliGrafSve" Name="ArtikliGrafSve1">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="Naziv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ArtikliGrafSve1Iterator" id="ArtikliGrafSve11" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.ArtikliGrafSve" Name="ArtikliGrafSve11">
+        <AttrNames>
+          <Item Value="ProsjecnaCijena"/>
+          <Item Value="Naziv"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

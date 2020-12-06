@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="windows-1250" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PrimkeZaglavljeVO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="DobavljaciVO1"
+    ViewObjectName="hr.oikt.webshop.model.vo.DobavljaciVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SkladistaVO1"
+    ViewObjectName="hr.oikt.webshop.model.vo.SkladistaVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_IdDobavljaca"
+    ListVOName="DobavljaciVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IdDobavljaca"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Naziv"/>
+      <Item Value="Sifra"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IdSkladista"
+    ListVOName="SkladistaVO1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IdSkladista"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Naziv"/>
+      <Item Value="Sifra"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="PrimkeZaglavljeEO"
+    Entity="hr.oikt.webshop.model.eo.PrimkeZaglavljeEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="IdDobavljaca"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdDobavljaca"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="ID_DOBAVLJACA"
+    LOVName="LOV_IdDobavljaca">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IdSkladista"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="IdSkladista"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="ID_SKLADISTA"
+    LOVName="LOV_IdSkladista">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Broj"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Broj"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="BROJ"/>
+  <ViewAttribute
+    Name="Datum"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Datum"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="DATUM"/>
+  <ViewAttribute
+    Name="Opis"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Opis"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="OPIS"/>
+  <ViewAttribute
+    Name="OznakaPotvrde"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OznakaPotvrde"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="OZNAKA_POTVRDE"/>
+  <ViewAttribute
+    Name="UserDodavanja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserDodavanja"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="USER_DODAVANJA"/>
+  <ViewAttribute
+    Name="DatumDodavanja"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatumDodavanja"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="DATUM_DODAVANJA"/>
+  <ViewAttribute
+    Name="UserIzmjene"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UserIzmjene"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="USER_IZMJENE"/>
+  <ViewAttribute
+    Name="DatumIzmjene"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatumIzmjene"
+    EntityUsage="PrimkeZaglavljeEO"
+    AliasName="DATUM_IZMJENE"/>
+  <ViewLinkAccessor
+    Name="PrimkeStavkeVO"
+    ViewLink="hr.oikt.webshop.model.vo.link.PriStaPriFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

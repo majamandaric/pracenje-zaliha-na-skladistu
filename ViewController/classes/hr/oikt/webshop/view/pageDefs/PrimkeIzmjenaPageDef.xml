@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="PrimkeIzmjenaPageDef"
+                Package="hr.oikt.webshop.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PrimkeZaglavljeVO1" RangeSize="25" DataControl="WebshopAMDataControl"
+              id="PrimkeZaglavljeVO1Iterator"/>
+    <searchRegion Binds="PrimkeZaglavljeVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PrimkeZaglavljeVO1Query"/>
+    <iterator Binds="PrimkeStavkeVO3" RangeSize="25" DataControl="WebshopAMDataControl" id="PrimkeStavkeVO3Iterator"/>
+    <searchRegion Binds="PrimkeStavkeVO3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="PrimkeStavkeVO3Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="WebshopAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="WebshopAMDataControl"/>
+    <tree IterBinding="PrimkeZaglavljeVO1Iterator" id="PrimkeZaglavljeVO1">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.PrimkeZaglavljeVO" Name="PrimkeZaglavljeVO10">
+        <AttrNames>
+          <Item Value="Broj"/>
+          <Item Value="Datum"/>
+          <Item Value="Opis"/>
+          <Item Value="OznakaPotvrde" Binds="OznakaPotvrde"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdSkladista"/>
+          <Item Value="IdDobavljaca"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PrimkeStavkeVO3Iterator" id="PrimkeStavkeVO3">
+      <nodeDefinition DefName="hr.oikt.webshop.model.vo.PrimkeStavkeVO" Name="PrimkeStavkeVO30">
+        <AttrNames>
+          <Item Value="Kolicina"/>
+          <Item Value="NabavnaCijena"/>
+          <Item Value="UserDodavanja"/>
+          <Item Value="DatumDodavanja"/>
+          <Item Value="UserIzmjene"/>
+          <Item Value="DatumIzmjene"/>
+          <Item Value="IdArtikla"/>
+          <Item Value="IdPrimke"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PrimkeZaglavljeVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="PrimkeZaglavljeVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="PrimkeStavkeVO3Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="PrimkeStavkeVO3Iterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="PrimkeStavkeVO3Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="PrimkeZaglavljeVO1Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <list IterBinding="PrimkeZaglavljeVO1Iterator" id="OznakaPotvrde" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="OznakaPotvrde"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="D"/>
+        <Item Value="N"/>
+      </ValueList>
+    </list>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,12 @@
+//Groovy Scripts for hr.oikt.webshop.model.eo.PrimkeZaglavljeEO
+
+package hr.oikt.webshop.model.eo
+
+import oracle.jbo.script.annotation.ValidatorExpression;
+
+@ValidatorExpression(name="DatumValidacija", attributeName="Datum")
+def Datum_DatumValidacija_ValidationRuleScript_ValidationRule()
+{
+adf.currentDate
+}
+

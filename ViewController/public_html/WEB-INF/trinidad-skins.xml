@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<skins xmlns="http://myfaces.apache.org/trinidad/skin">
+  <skin>
+    <id>button-skin.desktop</id>
+    <family>button-skin</family>
+    <extends>skyros-v1.desktop</extends>
+    <render-kit-id>org.apache.myfaces.trinidad.desktop</render-kit-id>
+    <style-sheet-name>skins/button-skin/button-skin.css</style-sheet-name>
+    <bundle-name>hr.fipu.cloud.view.skinBundle</bundle-name>
+  </skin>
+</skins>
