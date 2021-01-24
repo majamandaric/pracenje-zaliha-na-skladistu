@@ -10,7 +10,7 @@
 ### Organizacija
 [Sveučilište Jurja Dobrile u Puli](http://www.unipu.hr/)   
 [Fakultet informatike u Puli](https://fipu.unipu.hr/)  
-Izrada informatičkih projekata, Ak.g. 2017./2018.  
+Informatički praktikum II, Ak.g. 2017./2018.  
 Voditelj: **Patrik Franković** 
 
 ### Dokumentacija
